@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>koa-https-server</title>
+    <style>
+      textarea {
+        width: 480px;
+        height: 200px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>koa-https-server</h1>
+    <div>
+      <h3>把字符串转换为UTF8数组</h3>
+      <textarea id="toBytesVal" type="text">你好https服务器🚀，使用koa搭建服务</textarea>
+      <button id="toBytes">转换</button>
+    </div>
+    <div>
+      <h3>把UTF8数组转换为文字</h3>
+      <textarea id="toStringVal" type="text" readonly></textarea>
+      <button id="toString">转换</button>
+    </div>
+    <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <script>
+      const $toBytesVal = document.querySelector('#toBytesVal')
+      const $toStringVal = document.querySelector('#toStringVal')
+      document.querySelector('#toBytes').addEventListener('click', () => {
+        axios
+          .post('/api/toBytes', {
+            data: $toBytesVal.value
+          })
+          .then(({ data }) => {
+            $toStringVal.value = JSON.stringify(data, null, 4)
+          })
+      })
+      document.querySelector('#toString').addEventListener('click', () => {
+        if (!$toStringVal.value) return alert('请先转换上面的内容')
+        axios
+          .post('/api/toString', {
+            data: JSON.parse($toStringVal.value)
+          })
+          .then(({ data }) => {
+            console.log(data)
+            alert(data)
+          })
+      })
+    </script>
+  </body>
+</html>

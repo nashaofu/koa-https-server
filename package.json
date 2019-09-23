@@ -1,0 +1,23 @@
+{
+  "name": "koa-https-server",
+  "version": "1.0.0",
+  "description": "https服务器示例",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "koa",
+    "https"
+  ],
+  "author": "nashaofu",
+  "license": "ISC",
+  "dependencies": {
+    "js-utf8": "^0.0.3",
+    "koa": "^2.7.0",
+    "koa-logger": "^3.2.0",
+    "koa-parser": "^1.0.8",
+    "koa-route": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0"
+  }
+}
