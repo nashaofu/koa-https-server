@@ -29,6 +29,6 @@ npm i
 npm start
 ```
 
-2. 在浏览器打开：http://localhost:8080和https://localhost:8081，打开https服务器会有安全警告，直接忽略就好
+2. 在浏览器打开：http://localhost:8080 和 https://localhost:8081 ，打开https服务器会有安全警告，直接忽略就好
 
 ![20190923230035.jpg](./20190923230035.jpg)
